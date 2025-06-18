@@ -19,10 +19,9 @@ $user = $user_result->fetch_assoc();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
     $age = $_POST['age'];
     
-    $update_query = "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email', age='$age' WHERE username='$username'";
+    $update_query = "UPDATE users SET first_name='$first_name', last_name='$last_name', age='$age' WHERE username='$username'";
     
     if ($conn->query($update_query) === TRUE) {
         $success_message = "Profile updated successfully!";
@@ -46,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="scripts.js" defer></script>
 </head>
 <body>
+
+
 
 <div class="main-content">
     <header>
@@ -102,22 +103,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" value="<?php echo htmlspecialchars($user['email']); ?>" required>
-                    </div>
-                    
-                    <div class="form-group">
                         <label for="age" class="form-label">Age</label>
                         <input type="number" id="age" name="age" class="form-control" value="<?php echo $user['age']; ?>" min="16" max="100" required>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="created_at" class="form-label">Account Created</label>
-                    <input type="text" id="created_at" class="form-control" value="<?php echo date('F d, Y', strtotime($user['created_at'])); ?>" readonly>
-                </div>
-
-                <div class="form-actions">
+                <div class="form-actions" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-save"></i> Update Profile
                     </button>
