@@ -34,7 +34,9 @@ include 'LeftSidebar.php';
     </header>
 
     <main>
-        <section class="profile-section">
+
+
+<section class="profile-section">
             <div class="profile-header">
                 <div class="profile-image">
                     <img src="farshid.jpg" alt="Farshid Farahtaj" class="profile-image">
