@@ -46,8 +46,8 @@ $subjects = $conn->query("SELECT subjects.id, subjects.name, courses.name AS cou
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Subjects - University Of Sicily</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="left-sidebar.css">
+    <link rel="stylesheet" href="admin-panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -58,63 +58,93 @@ include 'LeftSidebar.php';
 ?>
 
 <div class="main-content">
-    <header>
-        <h1><img src="unilogo.png" alt="University Logo" width="161" height="149"></h1>
+    <header class="admin-header">
+        <div class="logo-container">
+            <img src="unilogo.png" alt="University Logo" class="logo-img" width="120" height="120">
+        </div>
         <h1>University Of Sicily</h1>
         <h3>Admin Portal</h3>
-        <h4 style="color: #EABEBF">Manage Subject</h4>
+        <h4>Manage Subjects</h4>
     </header>
 
     <main>
+        <?php if (isset($message)): ?>
+            <div class="message success">
+                <i>✓</i> <?php echo $message; ?>
+            </div>
+        <?php endif; ?>
+
         <section>
-            <p align="center"><div>
-            <section>
-                <?php if (isset($message)) echo "<p>$message</p>"; ?>
-                            
-                <form method="post" class="room-form">
-                    <h2 align="center">Add New Subject</h2>
-                    <label for="name">Subject Name: </label>
-                    <input type="text" name="name" id="name" required><br>
+            <div class="section-intro">
+                <h2 class="section-title">Subject Management</h2>
+                <p class="feature-description">
+                    Create and manage subjects for the University of Sicily system.
+                    Subjects are organized under courses and used in timetables.
+                </p>
+            </div>
+            
+            <div class="card subject-card">
+                <div class="card-header">
+                    <h3>Add New Subject</h3>
+                    <p class="feature-description">Create a new subject and assign it to a course.</p>
+                </div>
+                <form method="post" class="admin-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Subject Name</label>
+                        <input type="text" name="name" id="name" class="form-control" required>
+                    </div>
                     
-                    <label for="course_id">Course: </label>
-                    <select name="course_id" id="course_id" required>
-                        <?php while ($course = $courses->fetch_assoc()): ?>
-                            <option value="<?php echo $course['id']; ?>"><?php echo $course['name']; ?></option>
-                        <?php endwhile; ?>
-                    </select><br>
+                    <div class="form-group">
+                        <label for="course_id" class="form-label">Course</label>
+                        <select name="course_id" id="course_id" class="form-control" required>
+                            <?php while ($course = $courses->fetch_assoc()): ?>
+                                <option value="<?php echo $course['id']; ?>"><?php echo $course['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
                     
                     <input type="hidden" name="add_subject" value="1">
-                    <input type="submit" class="btn1" value="Add Subject">
+                    <button type="submit" class="btn btn-primary">Add Subject</button>
                 </form>
-            
-            
-            </section>
+            </div>
 
-            <section>
-                <h2>Existing Subjects</h2>
-                <table>
-                    <tr>
-                        <th>Subject Name</th>
-                        <th>Course</th>
-                        <th>Actions</th>
-                    </tr>
-                    <?php while ($subject = $subjects->fetch_assoc()): ?>
-                    <tr>
-                        <td><?php echo $subject['name']; ?></td>
-                        <td><?php echo $subject['course_name']; ?></td>
-                        <td>
-                            <a href="edit_subject.php?id=<?php echo $subject['id']; ?>">Edit</a>
-                            <a href="manage_subjects.php?delete=<?php echo $subject['id']; ?>" onclick="return confirm('Are you sure you want to delete this subject?');">Delete</a>
-                        </td>
-                    </tr>
-                    <?php endwhile; ?>
+            <div class="card subject-card">
+                <div class="card-header">
+                    <h3>Existing Subjects</h3>
+                    <p class="feature-description">View, edit or remove subject entries.</p>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Subject Name</th>
+                            <th>Course</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($subject = $subjects->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($subject['name']); ?></td>
+                            <td><?php echo htmlspecialchars($subject['course_name']); ?></td>
+                            <td class="action-links">
+                                <a href="edit_subject.php?id=<?php echo $subject['id']; ?>" class="edit" title="Edit Subject">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="manage_subjects.php?delete=<?php echo $subject['id']; ?>" 
+                                   onclick="return confirm('Are you sure you want to delete this subject?');" 
+                                   class="delete" title="Delete Subject">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </tbody>
                 </table>
-            </section>
-            </p></div>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="admin-footer">
         <p>&copy; 2025 University Class Timetable. All rights reserved.</p>
     </footer>
 </div>

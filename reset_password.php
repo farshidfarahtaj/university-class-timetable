@@ -52,71 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password - University Of Sicily</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="left-sidebar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="admin-style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="admin-panel.css">
     <script src="scripts.js" defer></script>
-    <style>
-        .user-card {
-            margin-bottom: 25px;
-            border-left: 4px solid var(--secondary-color);
-        }
-        .feature-description {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .admin-form {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
-        .section-intro {
-            margin-bottom: 25px;
-            padding-left: 15px;
-            border-left: 4px solid var(--secondary-color);
-        }
-        .message {
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            background-color: rgba(46, 204, 113, 0.1);
-            border-left: 4px solid #2ecc71;
-            color: #1e8449;
-        }
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .user-detail {
-            background-color: var(--bg-color);
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            border-left: 3px solid var(--primary-color);
-        }
-        .user-detail p {
-            margin: 5px 0;
-        }
-        .btn-back {
-            background-color: #6c757d;
-        }
-        .password-rules {
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: #666;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-        }
-        .password-rules ul {
-            margin: 5px 0 0 20px;
-            padding: 0;
-        }
-    </style>
 </head>
 <body>
 

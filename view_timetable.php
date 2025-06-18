@@ -45,58 +45,9 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Timetable - University Of Sicily</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="left-sidebar.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="user-panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="scripts.js" defer></script>
-    <style>
-        .timetable-card {
-            margin-bottom: 25px;
-            border-left: 4px solid #3498db;
-        }
-        .major-info {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid #3498db;
-        }
-        .major-name {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        .timetable-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .timetable-table th {
-            background-color: #2c3e50;
-            color: white;
-            padding: 12px 15px;
-            text-align: left;
-        }
-        .timetable-table td {
-            padding: 10px 15px;
-            border-bottom: 1px solid #eee;
-        }
-        .timetable-table tr:hover {
-            background-color: #f5f7fa;
-        }
-        .empty-message {
-            padding: 20px;
-            text-align: center;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .update-major {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #3498db;
-        }
-    </style>
 </head>
 <body>
 
@@ -106,10 +57,8 @@ include 'LeftSidebar.php';
 ?>
 
 <div class="main-content">
-    <header class="admin-header">
-        <div class="logo-container">
-            <img src="unilogo.png" alt="University Logo" class="logo-img" width="120" height="120">
-        </div>
+    <header>
+        <h1><img src="unilogo.png" alt="University Logo" width="161" height="149"></h1>
         <h1>University Of Sicily</h1>
         <h3>Student Portal</h3>
         <h4>Class Timetable</h4>
@@ -159,7 +108,7 @@ include 'LeftSidebar.php';
             </table>
         <?php else: ?>
             <div class="empty-message">
-                <i class="fas fa-calendar-times fa-3x" style="color: #95a5a6; margin-bottom: 15px;"></i>
+                <i class="fas fa-calendar-times fa-3x"></i>
                 <h3>No Classes Found</h3>
                 <p>There are no classes scheduled for your major at this time.</p>
                 <?php if (!$view_all && $has_major): ?>
@@ -169,7 +118,7 @@ include 'LeftSidebar.php';
         <?php endif; ?>
     </main>
 
-    <footer class="admin-footer">
+    <footer>
         <p>&copy; 2025 University Of Sicily. All rights reserved.</p>
     </footer>
 </div>

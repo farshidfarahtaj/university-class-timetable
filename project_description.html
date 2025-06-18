@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Timetable Management System - Project Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #16a085;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .feature-list {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .technical-details {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>University Timetable Management System - Project Overview</h1>
+
+    <div class="section">
+        <h2>1. Project Purpose</h2>
+        <p>This is a comprehensive web-based university timetable management system designed to streamline the scheduling and management of university classes. The system serves two main user groups: administrators and students, each with specific functionalities tailored to their needs.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Technical Architecture</h2>
+        <div class="technical-details">
+            <p>The project is built using:</p>
+            <ul>
+                <li><strong>Backend:</strong> PHP for server-side processing</li>
+                <li><strong>Database:</strong> MySQL for data storage</li>
+                <li><strong>Frontend:</strong> HTML, CSS, and JavaScript</li>
+                <li><strong>Security:</strong> Session-based authentication with password hashing</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Key Features and Sections</h2>
+
+        <h3>A. User Management System</h3>
+        <div class="feature-list">
+            <h4>1. Authentication System</h4>
+            <ul>
+                <li>Secure login system (login.php)</li>
+                <li>Password reset functionality (reset_password.php)</li>
+                <li>User registration (register.php)</li>
+                <li>Session management and logout (logout.php)</li>
+            </ul>
+
+            <h4>2. User Profiles</h4>
+            <ul>
+                <li>Student profiles (user_profile.php)</li>
+                <li>Admin profiles (modify_admins.php)</li>
+                <li>User modification capabilities (modify_user.php)</li>
+            </ul>
+        </div>
+
+        <h3>B. Administrative Features</h3>
+        <div class="feature-list">
+            <h4>1. Dashboard</h4>
+            <ul>
+                <li>Admin dashboard (admin_dashboard.php)</li>
+                <li>Student dashboard (student_dashboard.php)</li>
+                <li>User management interface (manage_users.php)</li>
+            </ul>
+
+            <h4>2. Resource Management</h4>
+            <ul>
+                <li>Course management (manage_courses.php, edit_course.php)</li>
+                <li>Subject management (manage_subjects.php, edit_subject.php)</li>
+                <li>Room management (manage_rooms.php, edit_room.php)</li>
+            </ul>
+
+            <h4>3. Timetable Management</h4>
+            <ul>
+                <li>Timetable creation and editing (manage_timetables.php)</li>
+                <li>Timetable modification (edit_timetable.php)</li>
+                <li>Timetable viewing (view_timetable.php)</li>
+            </ul>
+        </div>
+
+        <h3>C. Student Features</h3>
+        <div class="feature-list">
+            <h4>1. Personal Dashboard</h4>
+            <ul>
+                <li>Personalized timetable view</li>
+                <li>Course schedule access</li>
+                <li>Profile management</li>
+            </ul>
+
+            <h4>2. Timetable Access</h4>
+            <ul>
+                <li>View schedules based on their major</li>
+                <li>Filter and search capabilities</li>
+            </ul>
+        </div>
+
+        <h3>D. UI/UX Components</h3>
+        <div class="feature-list">
+            <h4>1. Navigation</h4>
+            <ul>
+                <li>Left sidebar navigation (LeftSidebar.php)</li>
+                <li>Responsive design elements</li>
+            </ul>
+
+            <h4>2. Styling</h4>
+            <ul>
+                <li>Main stylesheet (style.css)</li>
+                <li>Admin-specific styling (admin-style.css)</li>
+                <li>Sidebar styling (left-sidebar.css)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Security Features</h2>
+        <div class="feature-list">
+            <ul>
+                <li>Secure password handling</li>
+                <li>Session-based authentication</li>
+                <li>User role management</li>
+                <li>Protected routes and resources</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Database Structure</h2>
+        <p>The system uses a well-structured MySQL database (database.sql) that includes:</p>
+        <div class="feature-list">
+            <ul>
+                <li>User tables</li>
+                <li>Course and subject tables</li>
+                <li>Room management tables</li>
+                <li>Timetable scheduling tables</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Modern Features</h2>
+        <div class="feature-list">
+            <ul>
+                <li>Responsive design</li>
+                <li>Modern UI components</li>
+                <li>Interactive elements using JavaScript</li>
+                <li>Real-time updates and modifications</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Project Organization</h2>
+        <p>The project follows a clear file structure:</p>
+        <div class="feature-list">
+            <ul>
+                <li>Core functionality files (PHP)</li>
+                <li>Style sheets (CSS)</li>
+                <li>Client-side scripts (JavaScript)</li>
+                <li>Database configuration and structure</li>
+                <li>Documentation files</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Future Development</h2>
+        <p>The project includes modernization guides (admin_modernization_guide.md) indicating ongoing development and improvements to the system.</p>
+    </div>
+
+    <div class="section">
+        <h2>9. Educational Value</h2>
+        <p>This system demonstrates a practical application of web programming concepts, including:</p>
+        <div class="feature-list">
+            <ul>
+                <li>Database management</li>
+                <li>User authentication</li>
+                <li>CRUD operations</li>
+                <li>Frontend-backend integration</li>
+                <li>Security best practices</li>
+                <li>Responsive design principles</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 

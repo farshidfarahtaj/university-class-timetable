@@ -43,47 +43,9 @@ $rooms = $conn->query("SELECT * FROM rooms");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Rooms - University Of Sicily</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="left-sidebar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="admin-style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="admin-panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js" defer></script>
-    <style>
-        .room-card {
-            margin-bottom: 25px;
-            border-left: 4px solid var(--secondary-color);
-        }
-        .feature-description {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .action-links a {
-            padding: 5px 10px;
-            margin-right: 5px;
-            border-radius: 4px;
-            text-decoration: none;
-            color: white;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-        }
-        .action-links a.edit {
-            background-color: var(--secondary-color);
-        }
-        .action-links a.delete {
-            background-color: var(--accent-color);
-        }
-        .section-intro {
-            margin-bottom: 25px;
-            padding-left: 15px;
-            border-left: 4px solid var(--secondary-color);
-        }
-    </style>
 </head>
 <body>
 

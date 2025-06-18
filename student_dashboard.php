@@ -24,28 +24,9 @@ if (!empty($user['first_name']) && !empty($user['last_name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard - University Of Sicily</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="left-sidebar.css">
+    <link rel="stylesheet" href="user-panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="scripts.js" defer></script>
-    <style>
-        .profile-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .profile-link:hover {
-            background-color: #1a5276;
-        }
-        .profile-link i {
-            margin-right: 8px;
-        }
-    </style>
 </head>
 <body>
 

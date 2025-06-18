@@ -41,7 +41,7 @@ switch ($role) {
             ['link' => 'index.php', 'text' => 'Home'],
             ['link' => 'login.php', 'text' => 'Login'],
             ['link' => 'register.php', 'text' => 'Register'],
-            ['link' => 'about_me.php', 'text' => 'About Me']
+            ['link' => 'about_me.php', 'text' => 'About Us']
         ];
 }
 ?>

@@ -54,53 +54,9 @@ $timetables = $conn->query("SELECT timetables.id, rooms.name AS room_name, subje
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Timetables - University Of Sicily</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="left-sidebar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="admin-style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="admin-panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js" defer></script>
-    <style>
-        .timetable-card {
-            margin-bottom: 25px;
-            border-left: 4px solid var(--secondary-color);
-        }
-        .feature-description {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .action-links {
-            display: flex;
-            gap: 10px;
-        }
-        .action-links a {
-            padding: 8px;
-            border-radius: 4px;
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-        }
-        .action-links a.edit {
-            background-color: #3498db;
-        }
-        .action-links a.delete {
-            background-color: #e74c3c;
-        }
-        .section-intro {
-            margin-bottom: 25px;
-            padding-left: 15px;
-            border-left: 4px solid var(--secondary-color);
-        }
-        .timetable-table {
-            overflow-x: auto;
-        }
-    </style>
 </head>
 <body>
 
@@ -154,18 +110,18 @@ include 'LeftSidebar.php';
                         </select>
                     </div>
                     
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="subject_id" class="form-label" style="display: block; margin-bottom: 5px; font-weight: 500;">Subject:</label>
-                        <select name="subject_id" id="subject_id" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                    <div class="form-group">
+                        <label for="subject_id" class="form-label">Subject:</label>
+                        <select name="subject_id" id="subject_id" class="form-control" required>
                             <?php while ($subject = $subjects->fetch_assoc()): ?>
                                 <option value="<?php echo $subject['id']; ?>"><?php echo $subject['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
                     
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="day_of_week" class="form-label" style="display: block; margin-bottom: 5px; font-weight: 500;">Day of Week:</label>
-                        <select name="day_of_week" id="day_of_week" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                    <div class="form-group">
+                        <label for="day_of_week" class="form-label">Day of Week:</label>
+                        <select name="day_of_week" id="day_of_week" class="form-control" required>
                             <option value="Monday">Monday</option>
                             <option value="Tuesday">Tuesday</option>
                             <option value="Wednesday">Wednesday</option>
@@ -174,47 +130,47 @@ include 'LeftSidebar.php';
                         </select>
                     </div>
                     
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="start_time" class="form-label" style="display: block; margin-bottom: 5px; font-weight: 500;">Start Time:</label>
-                        <input type="time" name="start_time" id="start_time" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                    <div class="form-group">
+                        <label for="start_time" class="form-label">Start Time:</label>
+                        <input type="time" name="start_time" id="start_time" class="form-control" required>
                     </div>
                     
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="end_time" class="form-label" style="display: block; margin-bottom: 5px; font-weight: 500;">End Time:</label>
-                        <input type="time" name="end_time" id="end_time" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                    <div class="form-group">
+                        <label for="end_time" class="form-label">End Time:</label>
+                        <input type="time" name="end_time" id="end_time" class="form-control" required>
                     </div>
                     
                     <input type="hidden" name="add_timetable" value="1">
-                    <button type="submit" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; border-radius: 4px; text-decoration: none; border: none; cursor: pointer;">Add Timetable Entry</button>
+                    <button type="submit" class="btn btn-primary">Add Timetable Entry</button>
                 </form>
             </div>
 
-            <div class="card" style="background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);">
-                <div class="card-header" style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
                     <h3>Existing Timetables</h3>
                 </div>
-                <table class="admin-table" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <table class="admin-table">
                     <thead>
                         <tr>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">Room Name</th>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">Subject Name</th>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">Course Name</th>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">Day of Week</th>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">Start Time</th>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">End Time</th>
-                            <th style="padding: 12px 15px; text-align: left; background-color: #2c3e50; color: white;">Actions</th>
+                            <th>Room Name</th>
+                            <th>Subject Name</th>
+                            <th>Course Name</th>
+                            <th>Day of Week</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while ($timetable = $timetables->fetch_assoc()): ?>
-                        <tr style="border-bottom: 1px solid #eee;">
-                            <td style="padding: 12px 15px; text-align: left;"><?php echo $timetable['room_name']; ?></td>
-                            <td style="padding: 12px 15px; text-align: left;"><?php echo $timetable['subject_name']; ?></td>
-                            <td style="padding: 12px 15px; text-align: left;"><?php echo $timetable['course_name']; ?></td>
-                            <td style="padding: 12px 15px; text-align: left;"><?php echo $timetable['day_of_week']; ?></td>
-                            <td style="padding: 12px 15px; text-align: left;"><?php echo $timetable['start_time']; ?></td>
-                            <td style="padding: 12px 15px; text-align: left;"><?php echo $timetable['end_time']; ?></td>
-                            <td class="actions" style="padding: 12px 15px; text-align: left;">
+                        <tr>
+                            <td><?php echo $timetable['room_name']; ?></td>
+                            <td><?php echo $timetable['subject_name']; ?></td>
+                            <td><?php echo $timetable['course_name']; ?></td>
+                            <td><?php echo $timetable['day_of_week']; ?></td>
+                            <td><?php echo $timetable['start_time']; ?></td>
+                            <td><?php echo $timetable['end_time']; ?></td>
+                            <td class="actions">
                                 <div class="action-links">
                                     <a href="edit_timetable.php?id=<?php echo $timetable['id']; ?>" class="edit" title="Edit">
                                         <i class="fa fa-edit"></i>
@@ -234,8 +190,8 @@ include 'LeftSidebar.php';
         </section>
     </main>
 
-    <footer class="admin-footer" style="text-align: center; padding: 20px; color: #777; margin-top: 30px; background-color: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);">
-        <p style="margin-bottom: 0;">&copy; 2025 University Class Timetable. All rights reserved.</p>
+    <footer class="admin-footer">
+        <p>&copy; 2025 University Class Timetable. All rights reserved.</p>
     </footer>
 </div>
 </body>
