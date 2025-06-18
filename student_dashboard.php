@@ -53,6 +53,9 @@ include 'LeftSidebar.php';
             <a href="user_profile.php" class="profile-link">
                 <i class="fas fa-user-circle"></i> View and Edit Your Profile
             </a>
+            <a href="view_timetable.php" class="timetable-link" style="display: inline-block; margin-top: 20px;">
+                <i class="fas fa-calendar-alt"></i> View Timetable
+            </a>
         </div>
     </main>
 
